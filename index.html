@@ -13,21 +13,30 @@
             padding: 0;
             overflow-x: hidden;
         }
+
         header {
             text-align: center;
-            padding: 3rem 0;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #111, #222);
         }
+
         header h1 {
-            font-size: 3.5rem;
-            color: #ffffff;
+            font-size: 4rem;
+            color: #ffcc00;
             display: inline-block;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px dashed #ffffff;
-            animation: slideIn 1.5s ease-out;
+            padding-bottom: 1rem;
+            border-bottom: 3px dashed #ffcc00;
+            animation: fadeInTitle 1.5s ease-out;
         }
+
+        @keyframes fadeInTitle {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             background-color: #1a1a1a;
             padding: 1rem;
             position: sticky;
@@ -35,69 +44,226 @@
             z-index: 1000;
             font-size: 1.2rem;
         }
+
         nav a {
             color: #ffffff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             font-weight: bold;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
         }
+
         nav a:hover {
             background-color: #ffcc00;
             color: #0d0d0d;
         }
+
         section {
-            padding: 3rem 10%;
+            padding: 4rem 10%;
             line-height: 1.8;
         }
-        .highlight-box {
-            background-color: #2a2a2a;
+
+        h2 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffcc00;
+            margin-bottom: 2rem;
+            animation: fadeInSection 1.2s ease-in;
+        }
+
+        @keyframes fadeInSection {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            background-color: #1a1a1a;
             padding: 1.5rem;
             border-left: 5px solid #ffcc00;
-            margin: 2rem 0;
+            margin-bottom: 2rem;
+            animation: fadeInIntro 1.5s ease-out;
         }
+
+        @keyframes fadeInIntro {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .highlight-box {
+            background-color: #2a2a2a;
+            padding: 2rem;
+            border-left: 5px solid #ffcc00;
+            margin: 2rem 0;
+            animation: fadeInBox 1.2s ease-in-out;
+        }
+
+        @keyframes fadeInBox {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
         .highlight-box h3 {
             color: #ffcc00;
         }
+
+        .architecture-section img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .architecture-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .accordion {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            cursor: pointer;
+            padding: 1rem;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .accordion:hover {
+            background-color: #2a2a2a;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 1rem;
+            border-left: 2px dashed #ffcc00;
+            margin-top: 1rem;
+            background-color: #0d0d0d;
+        }
+
+        .scroll-indicator {
+            width: 100%;
+            height: 5px;
+            background: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+        }
+
+        .progress-bar {
+            height: 5px;
+            background: #ffcc00;
+            width: 0%;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
             background-color: #1a1a1a;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 5%;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>EngageSense: The Black Box of Audience Engagement</h1>
-    </header>
-    <nav>
-        <a href="#vision">Our Vision</a>
-        <a href="#metrics">Metrics</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank">DJ Sense</a>
-    </nav>
-    <section id="vision">
-        <h2>Our Vision</h2>
-        <p>EngageSense aims to create the ultimate real-time engagement processor, combining data from physical, emotional, mental, and spiritual sources to deliver actionable insights. It will transform how events, classrooms, and experiences are optimized.</p>
-    </section>
-    <section id="roadmap">
-        <h2>Roadmap</h2>
-        <div class="highlight-box">
-            <h3>Phase 1</h3>
-            <p>Develop Core Metrics Engine and Backend System</p>
-        </div>
-        <div class="highlight-box">
-            <h3>Phase 2</h3>
-            <p>Build Mobile-First UI</p>
-        </div>
-        <div class="highlight-box">
-            <h3>Phase 3</h3>
-            <p>Integrate Predictive Analytics and Adaptive Features</p>
-        </div>
-    </section>
-    <footer>
-        <p>© 2025 EngageSense Project</p>
-    </footer>
+
+<div class="scroll-indicator">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
+
+<header>
+    <h1>EngageSense: The Black Box of Audience Engagement</h1>
+</header>
+
+<nav>
+    <a href="#vision">Our Vision</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#case-study">Case Study</a>
+    <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank">DJ Sense</a>
+</nav>
+
+<section id="vision">
+    <h2>Our Vision</h2>
+    <div class="intro-text">
+        EngageSense aims to create the ultimate real-time engagement processor, combining data from physical, emotional, mental, and spiritual sources to deliver actionable insights. It will transform how events, classrooms, and experiences are optimized.
+    </div>
+</section>
+
+<section id="roadmap">
+    <h2>Project Roadmap</h2>
+    <div class="intro-text">Our roadmap highlights the phases and technologies behind EngageSense. Here’s how we’re progressing step-by-step:</div>
+
+    <div class="architecture-section">
+        <img src="/mnt/data/Screenshot%202025-02-05%20at%2022.24.26.png" alt="EngageSense Mini-App Architecture">
+        <p style="text-align: center; margin-top: 0.5rem; font-size: 1rem; color: #ffcc00;">Diagram: EngageSense Mini-App Lightweight Architecture</p>
+    </div>
+
+    <h3>Roadmap Phases:</h3>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Phase 1: Develop Core Components</div>
+    <div class="accordion-content">Focus on building the core metrics engine and lightweight backend system, ensuring scalable modularity.</div>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Phase 2: Build the Mobile-First UI</div>
+    <div class="accordion-content">Develop a minimal and clean interface optimized for real-time engagement tracking and user adaptability.</div>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Phase 3: Scalable Backend Infrastructure</div>
+    <div class="accordion-content">Implement real-time data synchronization and server-side optimization for low-latency performance.</div>
+
+    <div class="accordion" onclick="toggleAccordion(this)">Phase 4: Advanced Features Integration</div>
+    <div class="accordion-content">Integrate predictive analytics, adaptive feedback loops, and advanced sentiment tracking to elevate real-time decision-making.</div>
+</section>
+
+<section id="case-study">
+    <h2>Case Study: DJ Sense Integration</h2>
+    <div class="highlight-box">
+        <h3>Example Use Case: DJ Sense</h3>
+        <p>EngageSense powers DJ Sense by dynamically adjusting music and lighting based on crowd energy levels. <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank" style="color: #ffcc00;">Explore DJ Sense here.</a></p>
+    </div>
+</section>
+
+<script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    window.onscroll = function () {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+    };
+</script>
+
+<footer>
+    <p>© 2025 EngageSense Project</p>
+</footer>
+
 </body>
 </html>
