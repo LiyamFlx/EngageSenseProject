@@ -3,234 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EngageSense: Redefining Audience Engagement</title>
+    <title>EngageSense: The Black Box of Audience Engagement</title>
     <style>
-        body {
-            font-family: 'Fira Code', monospace;
-            background-color: #0d0d0d;
-            color: #e0e0e0;
+        :root {
+            --primary: #00ff00;
+            --background: #000000;
+            --text: #ffffff;
+            --accent: #333333;
+            --glow: rgba(0, 255, 0, 0.2);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace;
         }
 
-        header {
-            text-align: center;
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #111, #222);
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        header h1 {
-            font-size: 4rem;
-            color: #ffcc00;
-            display: inline-block;
-            padding-bottom: 1rem;
-            border-bottom: 3px dashed #ffcc00;
-            animation: fadeInTitle 1.5s ease-out;
-        }
-
-        @keyframes fadeInTitle {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #1a1a1a;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            font-size: 1.2rem;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #ffcc00;
-            color: #0d0d0d;
-        }
-
-        section {
-            padding: 4rem 10%;
-            line-height: 1.8;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: #ffcc00;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #ffcc00;
-            margin-bottom: 2rem;
-            animation: fadeInSection 1.2s ease-in;
-        }
-
-        @keyframes fadeInSection {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .intro-text {
-            font-size: 1.3rem;
-            background-color: #1a1a1a;
-            padding: 1.5rem;
-            border-left: 5px solid #ffcc00;
-            margin-bottom: 2rem;
-            animation: fadeInIntro 1.5s ease-out;
-        }
-
-        @keyframes fadeInIntro {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .highlight-box {
-            background-color: #2a2a2a;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 2rem;
-            border-left: 5px solid #ffcc00;
-            margin: 2rem 0;
-            animation: fadeInBox 1.2s ease-in-out;
         }
 
-        @keyframes fadeInBox {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .highlight-box h3 {
-            color: #ffcc00;
-        }
-
-        .architecture-section {
+        .hero {
+            min-height: 80vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin: 2rem 0;
-            position: relative;
-        }
-
-        .architecture-section svg {
-            max-width: 90%;
-            height: auto;
-            animation: fadeInSVG 1.5s ease-out;
-        }
-
-        @keyframes fadeInSVG {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .node {
-            fill: #1a1a1a;
-            stroke: #ffcc00;
-            stroke-width: 2;
-            rx: 10;
-            transition: transform 0.3s, fill 0.3s;
-        }
-
-        .node:hover {
-            fill: #ffcc00;
-            transform: scale(1.1);
-        }
-
-        .node-text {
-            fill: #ffffff;
-            font-size: 12px;
-            pointer-events: none;
-        }
-
-        .link {
-            stroke: #ffcc00;
-            stroke-width: 2;
-            marker-end: url(#arrow);
-        }
-
-        footer {
+            justify-content: center;
             text-align: center;
+            background: linear-gradient(to bottom, transparent, var(--accent));
             padding: 2rem;
-            background-color: #1a1a1a;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--glow);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .features, .use-cases, .technical-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .feature-card {
+            background: var(--accent);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--glow);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-section {
+            background: var(--accent);
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--background);
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid var(--primary);
+            background: #000;
         }
     </style>
 </head>
 <body>
+    <section class="hero">
+        <div class="container">
+            <h1>EngageSense</h1>
+            <p>The Black Box of Audience Engagement</p>
+            <p class="subtitle">Real-time engagement analytics powering next-generation experiences</p>
+        </div>
+    </section>
 
-<header>
-    <h1>EngageSense: The Black Box of Audience Engagement</h1>
-</header>
+    <div class="container">
+        <section class="intro">
+            <h2 class="section-title">Core System</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Data Processing</h3>
+                    <p>Real-time analysis of multiple input streams including audio, video, and biometric data</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AI Integration</h3>
+                    <p>Machine learning algorithms for pattern recognition and predictive analytics</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Engagement Metrics</h3>
+                    <p>Universal Cost Per Engagement (CPE) calculation across various scenarios</p>
+                </div>
+            </div>
+        </section>
 
-<nav>
-    <a href="#vision">Our Vision</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#case-study">Case Study</a>
-    <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank">DJ Sense</a>
-</nav>
+        <section>
+            <h2 class="section-title">Engagement Dimensions</h2>
+            <div class="metrics">
+                <div class="metric-card">
+                    <h4>Physical</h4>
+                    <p>Movement Intensity & Crowd Density</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Emotional</h4>
+                    <p>Biometric Response & Mood Analysis</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Mental</h4>
+                    <p>Attention Span & Interaction Patterns</p>
+                </div>
+                <div class="metric-card">
+                    <h4>Social</h4>
+                    <p>Group Dynamics & Collective Behavior</p>
+                </div>
+            </div>
+        </section>
 
-<section id="vision">
-    <h2>Our Vision</h2>
-    <div class="intro-text">
-        EngageSense aims to create the ultimate real-time engagement processor, combining data from physical, emotional, mental, and spiritual sources to deliver actionable insights. It will transform how events, classrooms, and experiences are optimized.
+        <section class="demo-section">
+            <h2 class="section-title">Interactive EngageSense Demo</h2>
+            <div class="demo-container">
+                <iframe src="https://darling-zabaione-a5e03c.netlify.app/" title="EngageSense Interactive Demo"></iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">CPE Formula and Real-Life Scenarios</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Sephora & NFL Partnership</h3>
+                    <p>Interactive app prioritization led to increased audience reach and $200K in incremental revenue. Learn how this collaboration optimized the fan experience.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>University Lecture Engagement</h3>
+                    <p>Real-time student engagement feedback through live polling improved comprehension and boosted course completion rates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Use Cases</h2>
+            <div class="features use-cases">
+                <div class="feature-card">
+                    <h3>Live Events</h3>
+                    <p>Real-time crowd analysis and DJ performance optimization</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Education</h3>
+                    <p>Student engagement tracking and adaptive learning</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Sports</h3>
+                    <p>Audience excitement measurement and event enhancement</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Technical Features</h2>
+            <div class="features technical-section">
+                <div class="feature-card">
+                    <h3>Audio Processing</h3>
+                    <ul>
+                        <li>Real-time waveform analysis</li>
+                        <li>BPM detection</li>
+                        <li>Energy level tracking</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Visual Analysis</h3>
+                    <ul>
+                        <li>Crowd density mapping</li>
+                        <li>Movement pattern detection</li>
+                        <li>Heat map generation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Data Integration</h3>
+                    <ul>
+                        <li>API connectivity</li>
+                        <li>Real-time data streaming</li>
+                        <li>Custom metric calculation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
-
-<section id="roadmap">
-    <h2>Project Roadmap</h2>
-    <div class="intro-text">Our roadmap highlights the phases and technologies behind EngageSense. Here’s how we’re progressing step-by-step:</div>
-
-    <div class="architecture-section">
-        <svg viewBox="0 0 600 400">
-            <!-- Arrow Marker -->
-            <defs>
-                <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#ffcc00"></polygon>
-                </marker>
-            </defs>
-
-            <!-- Nodes -->
-            <rect class="node" x="50" y="50" width="100" height="50"></rect>
-            <text class="node-text" x="75" y="80">UI Layer</text>
-
-            <rect class="node" x="250" y="50" width="120" height="50"></rect>
-            <text class="node-text" x="265" y="80">Local Cache</text>
-
-            <rect class="node" x="450" y="50" width="140" height="50"></rect>
-            <text class="node-text" x="465" y="80">Real-Time Analysis</text>
-
-            <!-- Data Flow Links -->
-            <line class="link" x1="150" y1="75" x2="250" y2="75"></line>
-            <line class="link" x1="370" y1="75" x2="450" y2="75"></line>
-
-            <!-- Backend -->
-            <rect class="node" x="250" y="200" width="140" height="50"></rect>
-            <text class="node-text" x="265" y="230">API Gateway</text>
-
-            <rect class="node" x="450" y="200" width="100" height="50"></rect>
-            <text class="node-text" x="460" y="230">MongoDB</text>
-
-            <line class="link" x1="320" y1="250" x2="450" y2="250"></line>
-        </svg>
-        <p style="text-align: center; margin-top: 1rem; font-size: 1rem; color: #ffcc00;">Interactive Flow: EngageSense Data Pipeline</p>
-    </div>
-</section>
-
-<section id="case-study">
-    <h2>Case Study: DJ Sense Integration</h2>
-    <div class="highlight-box">
-        <h3>Example Use Case: DJ Sense</h3>
-        <p>EngageSense powers DJ Sense by dynamically adjusting music and lighting based on crowd energy levels. <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank" style="color: #ffcc00;">Explore DJ Sense here.</a></p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2025 EngageSense Project</p>
-</footer>
-
 </body>
 </html>
+
