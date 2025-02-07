@@ -109,57 +109,48 @@
             color: #ffcc00;
         }
 
-        .architecture-section img {
-            max-width: 100%;
+        .architecture-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .architecture-section svg {
+            max-width: 90%;
             height: auto;
-            border: 2px solid #ffcc00;
-            border-radius: 8px;
-            transition: transform 0.3s;
+            animation: fadeInSVG 1.5s ease-out;
         }
 
-        .architecture-section img:hover {
-            transform: scale(1.05);
+        @keyframes fadeInSVG {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        .accordion {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            cursor: pointer;
-            padding: 1rem;
-            border: 2px solid #ffcc00;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            text-align: left;
-            transition: background-color 0.3s;
+        .node {
+            fill: #1a1a1a;
+            stroke: #ffcc00;
+            stroke-width: 2;
+            rx: 10;
+            transition: transform 0.3s, fill 0.3s;
         }
 
-        .accordion:hover {
-            background-color: #2a2a2a;
+        .node:hover {
+            fill: #ffcc00;
+            transform: scale(1.1);
         }
 
-        .accordion-content {
-            display: none;
-            padding: 1rem;
-            border-left: 2px dashed #ffcc00;
-            margin-top: 1rem;
-            background-color: #0d0d0d;
+        .node-text {
+            fill: #ffffff;
+            font-size: 12px;
+            pointer-events: none;
         }
 
-        .scroll-indicator {
-            width: 100%;
-            height: 5px;
-            background: #333;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1001;
-        }
-
-        .progress-bar {
-            height: 5px;
-            background: #ffcc00;
-            width: 0%;
+        .link {
+            stroke: #ffcc00;
+            stroke-width: 2;
+            marker-end: url(#arrow);
         }
 
         footer {
@@ -167,34 +158,9 @@
             padding: 2rem;
             background-color: #1a1a1a;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section {
-                padding: 2rem 5%;
-            }
-
-            header h1 {
-                font-size: 3rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-        }
     </style>
 </head>
 <body>
-
-<div class="scroll-indicator">
-    <div class="progress-bar" id="progress-bar"></div>
-</div>
 
 <header>
     <h1>EngageSense: The Black Box of Audience Engagement</h1>
@@ -202,7 +168,6 @@
 
 <nav>
     <a href="#vision">Our Vision</a>
-    <a href="#metrics">Metrics</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#case-study">Case Study</a>
     <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank">DJ Sense</a>
@@ -220,23 +185,39 @@
     <div class="intro-text">Our roadmap highlights the phases and technologies behind EngageSense. Here’s how we’re progressing step-by-step:</div>
 
     <div class="architecture-section">
-        <img src="/mnt/data/Screenshot%202025-02-05%20at%2022.24.26.png" alt="EngageSense Mini-App Architecture">
-        <p style="text-align: center; margin-top: 0.5rem; font-size: 1rem; color: #ffcc00;">Diagram: EngageSense Mini-App Lightweight Architecture</p>
+        <svg viewBox="0 0 600 400">
+            <!-- Arrow Marker -->
+            <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#ffcc00"></polygon>
+                </marker>
+            </defs>
+
+            <!-- Nodes -->
+            <rect class="node" x="50" y="50" width="100" height="50"></rect>
+            <text class="node-text" x="75" y="80">UI Layer</text>
+
+            <rect class="node" x="250" y="50" width="120" height="50"></rect>
+            <text class="node-text" x="265" y="80">Local Cache</text>
+
+            <rect class="node" x="450" y="50" width="140" height="50"></rect>
+            <text class="node-text" x="465" y="80">Real-Time Analysis</text>
+
+            <!-- Data Flow Links -->
+            <line class="link" x1="150" y1="75" x2="250" y2="75"></line>
+            <line class="link" x1="370" y1="75" x2="450" y2="75"></line>
+
+            <!-- Backend -->
+            <rect class="node" x="250" y="200" width="140" height="50"></rect>
+            <text class="node-text" x="265" y="230">API Gateway</text>
+
+            <rect class="node" x="450" y="200" width="100" height="50"></rect>
+            <text class="node-text" x="460" y="230">MongoDB</text>
+
+            <line class="link" x1="320" y1="250" x2="450" y2="250"></line>
+        </svg>
+        <p style="text-align: center; margin-top: 1rem; font-size: 1rem; color: #ffcc00;">Interactive Flow: EngageSense Data Pipeline</p>
     </div>
-
-    <h3>Roadmap Phases:</h3>
-
-    <div class="accordion" onclick="toggleAccordion(this)">Phase 1: Develop Core Components</div>
-    <div class="accordion-content">Focus on building the core metrics engine and lightweight backend system, ensuring scalable modularity.</div>
-
-    <div class="accordion" onclick="toggleAccordion(this)">Phase 2: Build the Mobile-First UI</div>
-    <div class="accordion-content">Develop a minimal and clean interface optimized for real-time engagement tracking and user adaptability.</div>
-
-    <div class="accordion" onclick="toggleAccordion(this)">Phase 3: Scalable Backend Infrastructure</div>
-    <div class="accordion-content">Implement real-time data synchronization and server-side optimization for low-latency performance.</div>
-
-    <div class="accordion" onclick="toggleAccordion(this)">Phase 4: Advanced Features Integration</div>
-    <div class="accordion-content">Integrate predictive analytics, adaptive feedback loops, and advanced sentiment tracking to elevate real-time decision-making.</div>
 </section>
 
 <section id="case-study">
@@ -246,20 +227,6 @@
         <p>EngageSense powers DJ Sense by dynamically adjusting music and lighting based on crowd energy levels. <a href="https://darling-zabaione-a5e03c.netlify.app/" target="_blank" style="color: #ffcc00;">Explore DJ Sense here.</a></p>
     </div>
 </section>
-
-<script>
-    function toggleAccordion(element) {
-        const content = element.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    }
-
-    window.onscroll = function () {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (scrollTop / scrollHeight) * 100;
-        document.getElementById('progress-bar').style.width = scrolled + '%';
-    };
-</script>
 
 <footer>
     <p>© 2025 EngageSense Project</p>
