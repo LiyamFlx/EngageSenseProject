@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EngageSense: The Black Box of Audience Engagement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #00ff00;
+            --primary-dark: #00cc00;
             --background: #000000;
             --text: #ffffff;
             --accent: #333333;
             --glow: rgba(0, 255, 0, 0.2);
+            --card-bg: rgba(51, 51, 51, 0.7);
         }
 
         * {
@@ -30,6 +33,28 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--primary);
         }
 
         .hero {
@@ -122,6 +147,13 @@
             color: var(--primary);
         }
 
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid var(--primary);
+            background: #000;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -131,16 +163,16 @@
                 padding: 1rem;
             }
         }
-
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: 2px solid var(--primary);
-            background: #000;
-        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#intro">Core System</a>
+        <a href="#demo">Interactive Demo</a>
+        <a href="#cpe">CPE Formula</a>
+        <a href="#technical">Technical Features</a>
+    </nav>
+
     <section class="hero">
         <div class="container">
             <h1>EngageSense</h1>
@@ -150,54 +182,32 @@
     </section>
 
     <div class="container">
-        <section class="intro">
+        <section id="intro" class="intro">
             <h2 class="section-title">Core System</h2>
             <div class="features">
                 <div class="feature-card">
                     <h3>Data Processing</h3>
-                    <p>Real-time analysis of multiple input streams including audio, video, and biometric data</p>
+                    <p>Real-time analysis of multiple input streams including audio, video, and biometric data.</p>
                 </div>
                 <div class="feature-card">
                     <h3>AI Integration</h3>
-                    <p>Machine learning algorithms for pattern recognition and predictive analytics</p>
+                    <p>Machine learning algorithms for pattern recognition and predictive analytics.</p>
                 </div>
                 <div class="feature-card">
                     <h3>Engagement Metrics</h3>
-                    <p>Universal Cost Per Engagement (CPE) calculation across various scenarios</p>
+                    <p>Universal Cost Per Engagement (CPE) calculation across various scenarios.</p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title">Engagement Dimensions</h2>
-            <div class="metrics">
-                <div class="metric-card">
-                    <h4>Physical</h4>
-                    <p>Movement Intensity & Crowd Density</p>
-                </div>
-                <div class="metric-card">
-                    <h4>Emotional</h4>
-                    <p>Biometric Response & Mood Analysis</p>
-                </div>
-                <div class="metric-card">
-                    <h4>Mental</h4>
-                    <p>Attention Span & Interaction Patterns</p>
-                </div>
-                <div class="metric-card">
-                    <h4>Social</h4>
-                    <p>Group Dynamics & Collective Behavior</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="demo-section">
+        <section id="demo" class="demo-section">
             <h2 class="section-title">Interactive EngageSense Demo</h2>
             <div class="demo-container">
                 <iframe src="https://darling-zabaione-a5e03c.netlify.app/" title="EngageSense Interactive Demo"></iframe>
             </div>
         </section>
 
-        <section>
+        <section id="cpe">
             <h2 class="section-title">CPE Formula and Real-Life Scenarios</h2>
             <div class="features">
                 <div class="feature-card">
@@ -211,25 +221,7 @@
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title">Use Cases</h2>
-            <div class="features use-cases">
-                <div class="feature-card">
-                    <h3>Live Events</h3>
-                    <p>Real-time crowd analysis and DJ performance optimization</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Education</h3>
-                    <p>Student engagement tracking and adaptive learning</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Sports</h3>
-                    <p>Audience excitement measurement and event enhancement</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
+        <section id="technical">
             <h2 class="section-title">Technical Features</h2>
             <div class="features technical-section">
                 <div class="feature-card">
