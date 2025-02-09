@@ -57,7 +57,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(to bottom, transparent, var(--accent));
             padding: 2rem;
         }
 
@@ -67,82 +66,59 @@
             text-shadow: 0 0 10px var(--glow);
         }
 
-        .features, .use-cases, .technical-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
+        .teaser-section {
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--accent);
         }
 
-        .feature-card {
-            background: var(--accent);
+        .teaser-box {
+            max-width: 800px;
             padding: 2rem;
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
             border-radius: 8px;
-            border: 1px solid var(--primary);
+            text-align: center;
             transition: transform 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px var(--glow);
+        .teaser-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px var(--glow);
         }
 
-        .feature-card h3 {
+        .teaser-box h3 {
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
         }
 
-        .demo-section {
-            background: var(--accent);
-            padding: 4rem 0;
-            margin: 4rem 0;
+        .teaser-box p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
         }
 
-        .demo-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: var(--background);
-            border-radius: 8px;
-            border: 1px solid var(--primary);
+        .teaser-box a {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
         }
 
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: 2px solid var(--primary);
-            background: #000;
+        .teaser-box a:hover {
+            background: var(--primary);
+            color: var(--background);
         }
 
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
-
-            .container {
-                padding: 1rem;
-            }
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            color: var(--text);
-            border-radius: 5px;
-            border: 1px solid var(--primary);
-        }
-
-        .popup.active {
-            display: block;
-        }
-
-        .popup h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -152,98 +128,27 @@
         <a href="#demo">Interactive Demo</a>
         <a href="#cpe">CPE Formula</a>
         <a href="#technical">Technical Features</a>
+        <a href="blackbox.html">Black Box</a>
     </nav>
 
     <section class="hero">
-        <div class="container">
+        <div>
             <h1>EngageSense</h1>
             <p>The Black Box of Audience Engagement</p>
             <p class="subtitle">Real-time engagement analytics powering next-generation experiences</p>
         </div>
     </section>
 
-    <div class="container">
-        <section id="intro" class="intro">
-            <h2 class="section-title">Core System</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Data Processing</h3>
-                    <p>Real-time analysis of multiple input streams including audio, video, and biometric data.</p>
-                    <a href="#" class="nav-link" onclick="togglePopup('popup-data')">Learn More</a>
-                    <div id="popup-data" class="popup">
-                        <h3>Data Processing Insights</h3>
-                        <p>EngageSense ingests and processes real-time inputs from sensors and wearables, ensuring continuous insights generation.</p>
-                    </div>
-                </div>
-                <div class="feature-card">
-                    <h3>AI Integration</h3>
-                    <p>Machine learning algorithms for pattern recognition and predictive analytics.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Engagement Metrics</h3>
-                    <p>Universal Cost Per Engagement (CPE) calculation across various scenarios.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="demo" class="demo-section">
-            <h2 class="section-title">Interactive EngageSense Demo</h2>
-            <div class="demo-container">
-                <iframe src="https://darling-zabaione-a5e03c.netlify.app/" title="EngageSense Interactive Demo"></iframe>
-            </div>
-        </section>
-
-        <section id="cpe">
-            <h2 class="section-title">CPE Formula and Real-Life Scenarios</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <h3>Sephora & NFL Partnership</h3>
-                    <p>Interactive app prioritization led to increased audience reach and $200K in incremental revenue. Learn how this collaboration optimized the fan experience.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>University Lecture Engagement</h3>
-                    <p>Real-time student engagement feedback through live polling improved comprehension and boosted course completion rates.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="technical">
-            <h2 class="section-title">Technical Features</h2>
-            <div class="features technical-section">
-                <div class="feature-card">
-                    <h3>Audio Processing</h3>
-                    <ul>
-                        <li>Real-time waveform analysis</li>
-                        <li>BPM detection</li>
-                        <li>Energy level tracking</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Visual Analysis</h3>
-                    <ul>
-                        <li>Crowd density mapping</li>
-                        <li>Movement pattern detection</li>
-                        <li>Heat map generation</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Data Integration</h3>
-                    <ul>
-                        <li>API connectivity</li>
-                        <li>Real-time data streaming</li>
-                        <li>Custom metric calculation</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
+    <section class="teaser-section">
+        <div class="teaser-box">
+            <h3>Discover the Black Box of Audience Engagement</h3>
+            <p>Learn how real-time AI-driven analytics power immersive and interactive experiences across multiple dimensions of engagement.</p>
+            <a href="blackbox.html">Explore Now</a>
+        </div>
+    </section>
 
     <script>
-        function togglePopup(id) {
-            const popup = document.getElementById(id);
-            popup.classList.toggle('active');
-        }
+        // Optional interaction script if needed
     </script>
 </body>
 </html>
-
