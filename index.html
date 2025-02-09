@@ -29,12 +29,6 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -73,13 +67,6 @@
             text-shadow: 0 0 10px var(--glow);
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
         .features, .use-cases, .technical-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -106,25 +93,6 @@
             font-size: 1.5rem;
         }
 
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .metric-card {
-            background: var(--accent);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .metric-card h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
         .demo-section {
             background: var(--accent);
             padding: 4rem 0;
@@ -138,13 +106,6 @@
             background: var(--background);
             border-radius: 8px;
             border: 1px solid var(--primary);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--primary);
         }
 
         iframe {
@@ -162,6 +123,26 @@
             .container {
                 padding: 1rem;
             }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            color: var(--text);
+            border-radius: 5px;
+            border: 1px solid var(--primary);
+        }
+
+        .popup.active {
+            display: block;
+        }
+
+        .popup h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -188,6 +169,11 @@
                 <div class="feature-card">
                     <h3>Data Processing</h3>
                     <p>Real-time analysis of multiple input streams including audio, video, and biometric data.</p>
+                    <a href="#" class="nav-link" onclick="togglePopup('popup-data')">Learn More</a>
+                    <div id="popup-data" class="popup">
+                        <h3>Data Processing Insights</h3>
+                        <p>EngageSense ingests and processes real-time inputs from sensors and wearables, ensuring continuous insights generation.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
                     <h3>AI Integration</h3>
@@ -251,6 +237,13 @@
             </div>
         </section>
     </div>
+
+    <script>
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            popup.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
 
