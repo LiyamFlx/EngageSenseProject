@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngageSense: Black Box of Audience Engagement</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Arial, sans-serif';
+        }
+        .module-card:hover {
+            background-color: #2b8cbe;
+            color: white;
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+        .sankey-connection {
+            stroke: #2b8cbe;
+            stroke-width: 4;
+            fill: none;
+            marker-end: url(#arrow);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="text-center p-10">
+        <h1 class="text-4xl font-bold text-gray-800">EngageSense: Black Box of Audience Engagement</h1>
+        <p class="mt-4 text-lg text-gray-600">Discover how real-time data transforms audience engagement through intuitive and interactive analysis.</p>
+    </header>
+
+    <!-- Sankey Diagram / System Flow Section -->
+    <div class="container mx-auto px-6 lg:px-20">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Core Modules -->
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">Input Collection</h3>
+                <p class="text-gray-600">Tracks all user interactions and behavioral data through wearables, environmental sensors, and audience feedback.</p>
+            </div>
+
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">Data Preprocessing</h3>
+                <p class="text-gray-600">Handles data cleaning, normalization, and formatting to ensure accurate downstream processing.</p>
+            </div>
+
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">AI Analysis</h3>
+                <p class="text-gray-600">Applies machine learning models to process engagement signals and identify key patterns.</p>
+            </div>
+
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">Engagement Scoring</h3>
+                <p class="text-gray-600">Calculates comprehensive engagement scores across physical, emotional, mental, and spiritual dimensions.</p>
+            </div>
+
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">Recommendations</h3>
+                <p class="text-gray-600">Generates actionable recommendations based on engagement scores to optimize audience experiences.</p>
+            </div>
+
+            <div class="module-card bg-white p-6 shadow-md rounded-lg hover:shadow-lg cursor-pointer">
+                <h3 class="text-xl font-bold">Real-Time Dashboard</h3>
+                <p class="text-gray-600">Displays interactive, real-time analytics and performance metrics through dynamic visualizations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SVG for Sankey Diagram -->
+    <div class="my-12 flex justify-center">
+        <svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#2b8cbe" />
+                </marker>
+            </defs>
+            
+            <!-- EngageSense Core -->
+            <circle cx="400" cy="150" r="50" fill="#2b8cbe" class="hover:scale-110 transition duration-300"/>
+            <text x="370" y="155" fill="white" font-size="14" font-weight="bold">EngageSense Core</text>
+            
+            <!-- Lines from modules -->
+            <path class="sankey-connection" d="M 150 100 C 250 100, 250 150, 350 150" />
+            <path class="sankey-connection" d="M 150 200 C 250 200, 250 170, 350 170" />
+            <path class="sankey-connection" d="M 600 100 C 500 100, 500 150, 450 150" />
+            <path class="sankey-connection" d="M 600 200 C 500 200, 500 170, 450 170" />
+
+            <!-- Module Labels -->
+            <text x="70" y="100" font-size="12">Input Collection</text>
+            <text x="70" y="200" font-size="12">Data Preprocessing</text>
+            <text x="620" y="100" font-size="12">AI Analysis</text>
+            <text x="620" y="200" font-size="12">Recommendations</text>
+        </svg>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-6 text-white text-center">
+        <p>&copy; 2025 EngageSense. All rights reserved. | <a href="https://liyamflx.github.io/EngageSenseProject/" class="underline">Visit Project</a></p>
+    </footer>
+
+</body>
+</html>
