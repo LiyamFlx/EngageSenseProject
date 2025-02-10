@@ -18,6 +18,7 @@ h1 {
     padding: 20px;
 }
 
+<<<<<<< HEAD
 button {
     background-color: #4CAF50;
     color: white;
@@ -30,3 +31,31 @@ button {
 button:hover {
     background-color: #45a049;
 }
+=======
+.flowchart {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.flowchart div {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flowchart div:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .flowchart {
+        grid-template-columns: 1fr;
+    }
+}
+>>>>>>> 2b3f4dc (Improved blackbox.html with modern layout and flowchart design)
