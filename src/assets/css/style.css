@@ -66,3 +66,20 @@ body {
     transform: scale(1.05);
     background-color: #d0d4de;
 }
+
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --link-color: #1abc9c;
+}
+
+body.dark-mode {
+    --bg-color: #111;
+    --text-color: #f4f4f9;
+    --link-color: #1abc9c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}

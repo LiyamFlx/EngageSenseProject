@@ -33,3 +33,13 @@
             <div><strong>Real-Time Dashboard</strong><br>Displays metrics and insights in real-time.</div>
         </div>
     </div>
+    <button id="theme-toggle">Toggle Theme</button>
+
+    <script>
+      const body = document.body;
+      const toggleButton = document.getElementById('theme-toggle');
+
+      toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+      });
+    </script>
