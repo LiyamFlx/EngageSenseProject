@@ -41,3 +41,28 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
+.flowchart-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.flowchart {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.flowchart div {
+    background-color: #e3e6f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.flowchart div:hover {
+    transform: scale(1.05);
+    background-color: #d0d4de;
+}
