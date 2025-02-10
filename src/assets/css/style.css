@@ -11,22 +11,23 @@ body {
     justify-content: space-around;
     padding: 15px 0;
     font-size: 1.1rem;
-    background-color: #111;
+    background-color: #2c3e50;
 }
 
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 0 15px;
+    transition: color 0.3s;
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    color: #1abc9c;
 }
 
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: #e3e6f0;
 }
 
@@ -39,35 +40,4 @@ body {
     font-size: 1.4rem;
     max-width: 800px;
     margin: 0 auto;
-}
-
-.flowchart-section {
-    padding: 40px 20px;
-    background-color: #ffffff;
-}
-
-.flowchart {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    text-align: center;
-}
-
-.flowchart div {
-    background-color: #e3e6f0;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.flowchart div:hover {
-    transform: scale(1.05);
-    background-color: #d0d4de;
-}
-
-@media (max-width: 768px) {
-    .flowchart {
-        grid-template-columns: 1fr;
-    }
 }
