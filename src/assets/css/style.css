@@ -1,32 +1,58 @@
+/* General styles for the body */
 body {
     font-family: 'Arial, sans-serif';
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
 
+/* Styles for headings */
 h1 {
     text-align: center;
     padding: 20px;
-    font-size: 2.5rem;
+    font-size: var(--heading-font-size);
 }
 
+/* Container styles */
 .container {
     max-width: 960px;
     margin: auto;
     padding: 20px;
 }
 
+/* Button styles */
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: var(--button-font-size);
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--button-hover-bg-color);
+}
+
+/* Responsive design rules */
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--heading-font-size-mobile);
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: var(--button-font-size-mobile);
+    }
+}
+
+/* Interactive element styles */
+button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
 }
