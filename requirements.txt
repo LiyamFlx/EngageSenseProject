@@ -2,3 +2,7 @@ pytest
 flake8
 bandit
 mypy
+requests
+numpy
+pandas
+scikit-learn
