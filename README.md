@@ -9,4 +9,9 @@ EngageSense analyzes audience engagement in real time using advanced data analyt
 - **data/**: Input datasets and temporary files.
 
 ## CI/CD Pipeline
-This project uses GitHub Actions for continuous integration and continuous deployment (CI/CD). The pipeline is configured to run on every push and pull request, and it includes steps for checking out the code, setting up Python, installing dependencies, and running tests.
+This project uses GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD). The pipeline is configured to:
+- Install dependencies
+- Run tests
+- Build and deploy the application to a staging environment
+- Deploy to a production environment after successful tests
+- Send notifications for deployment status to a communication channel like Slack
