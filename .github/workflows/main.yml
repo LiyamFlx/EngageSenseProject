@@ -22,7 +22,11 @@ jobs:
       - name: Check types
         run: mypy .
       - name: Check security vulnerabilities
-        run: safety check
+        run: bandit -r .
+      - name: Generate code coverage report
+        run: |
+          pytest --cov=.
+          bash <(curl -s https://codecov.io/bash)
       - name: Build and deploy to staging
         run: |
           echo "Building and deploying to staging environment..."
@@ -36,3 +40,10 @@ jobs:
         run: |
           echo "Sending deployment status to Slack..."
           # Add your Slack notification commands here
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
