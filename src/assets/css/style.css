@@ -12,7 +12,7 @@
     --font-size-small: 12px;
 }
 
-/* Global styles */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -20,23 +20,24 @@
     font-family: 'Fira Code', monospace;
 }
 
-/* Body styles */
 body {
     background: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    font-size: var(--font-size-base);
 }
 
-/* Navigation styles */
+/* Navigation Styles */
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
 }
 
 nav a {
@@ -44,13 +45,14 @@ nav a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: var(--primary-color);
 }
 
-/* Hero section styles */
+/* Hero Section */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -66,7 +68,7 @@ nav a:hover {
     text-shadow: 0 0 10px var(--glow-color);
 }
 
-/* Teaser section styles */
+/* Teaser Section */
 .teaser-section {
     padding: 4rem 2rem;
     display: flex;
@@ -82,7 +84,7 @@ nav a:hover {
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .teaser-box:hover {
@@ -98,17 +100,17 @@ nav a:hover {
 
 .teaser-box p {
     margin-bottom: 1.5rem;
-    color: var(--text-color);
 }
 
 .teaser-box a {
+    display: inline-block;
     color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
     border: 1px solid var(--secondary-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .teaser-box a:hover {
@@ -116,12 +118,12 @@ nav a:hover {
     color: var(--background-color);
 }
 
-/* Features section styles */
+/* Features, Use Cases, Technical Sections */
 .features, .use-cases, .technical-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 4rem 0;
+    padding: 4rem 2rem;
 }
 
 .feature-card {
@@ -129,7 +131,7 @@ nav a:hover {
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
@@ -143,7 +145,7 @@ nav a:hover {
     font-size: 1.5rem;
 }
 
-/* Demo section styles */
+/* Demo Section */
 .demo-section {
     background: var(--accent-color);
     padding: 4rem 0;
@@ -166,13 +168,19 @@ iframe {
     background: #000;
 }
 
-/* Responsive design rules */
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
     }
 
     .container {
+        padding: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
         padding: 1rem;
     }
 }
