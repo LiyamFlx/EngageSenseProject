@@ -26,3 +26,12 @@ This project uses GitHub Actions for deployment to staging and production enviro
 - Building and deploying the application to a staging environment
 - Deploying to a production environment after successful tests
 - Sending notifications for deployment status to a communication channel like Slack
+
+## Checking Out a Pull Request
+To check out a pull request using GitHub CLI, use the following command:
+
+```sh
+gh pr checkout <pr-number>
+```
+
+For more details, refer to the [GitHub CLI documentation](https://cli.github.com/manual/gh_pr_checkout).
