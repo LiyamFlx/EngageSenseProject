@@ -26,3 +26,13 @@ This project uses GitHub Actions for deployment to staging and production enviro
 - Building and deploying the application to a staging environment
 - Deploying to a production environment after successful tests
 - Sending notifications for deployment status to a communication channel like Slack
+
+## Instructions for Deploying, Pushing, and Committing Changes
+
+To deploy, push, and commit all changes in this repository, follow these steps:
+
+1. Ensure that all changes are saved and committed locally.
+2. Push the committed changes to the remote repository.
+3. Deploy the application using the CI/CD pipeline configured in the repository.
+
+The repository has a CI/CD pipeline configured in the `.github/workflows/main.yml` file, which handles the deployment process. The pipeline includes steps for building, testing, and deploying the application to staging and production environments.
