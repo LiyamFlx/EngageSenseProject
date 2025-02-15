@@ -35,3 +35,11 @@ gh pr checkout <pr-number>
 ```
 
 For more details, refer to the [GitHub CLI documentation](https://cli.github.com/manual/gh_pr_checkout).
+
+## GitHub Actions Workflow for Checking Out Pull Requests
+We have set up a GitHub Actions workflow to automate the process of checking out pull requests. This workflow is defined in the `.github/workflows/checkout.yml` file.
+
+The workflow includes the following steps:
+1. Install GitHub CLI
+2. Authenticate GitHub CLI using a GitHub token
+3. Check out the pull request using `gh pr checkout ${{ github.event.pull_request.number }}`
