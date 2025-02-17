@@ -9,12 +9,3 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: Authenticate GitHub CLI
-        run: gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Checkout pull request
-        run: gh pr checkout ${{ github.event.pull_request.number }}
