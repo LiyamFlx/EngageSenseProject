@@ -21,6 +21,8 @@
         <p>Discover how real-time data transforms audience engagement through intuitive and interactive analysis.</p>
     </div>
 
+</body>
+</html>
     <div class="flowchart-section">
         <div class="flowchart">
             <div><strong>Input Collection</strong><br>Tracks user interactions and data from sensors and feedback.</div>
@@ -31,16 +33,6 @@
             <div><strong>Real-Time Dashboard</strong><br>Displays metrics and insights in real-time.</div>
         </div>
     </div>
-
-    <div class="feedback-section">
-        <h2>We Value Your Feedback</h2>
-        <form action="/submit-feedback" method="POST">
-            <label for="feedback">Let us know what you think:</label><br>
-            <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Your feedback..."></textarea><br>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-
     <button id="theme-toggle">Toggle Theme</button>
 
     <script>
@@ -51,6 +43,11 @@
         body.classList.toggle('dark-mode');
       });
     </script>
-
-</body>
-</html>
+    <div class="feedback-section">
+        <h2>We Value Your Feedback</h2>
+        <form action="/submit-feedback" method="POST">
+            <label for="feedback">Let us know what you think:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" placeholder="Your feedback..."></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
