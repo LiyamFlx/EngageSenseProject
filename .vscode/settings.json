@@ -1,0 +1,12 @@
+{
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "true"
+    },
+    "editor.formatOnPaste": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    }
+}
