@@ -15,6 +15,9 @@
 
     // Exclude specific file patterns from appearing in the file explorer
     "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
         "**/__pycache__": true, // Exclude the __pycache__ directories
         "**/*.pyc": true // Exclude Python compiled bytecode files
     }
