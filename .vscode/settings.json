@@ -1,12 +1,22 @@
 {
+    // Enable automatic formatting of the document on save
     "editor.formatOnSave": true,
+
+    // Apply all eslint fixes on save
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "true"
+        "source.fixAll.eslint": true
     },
+
+    // Enable automatic formatting of the document on paste
     "editor.formatOnPaste": true,
+
+    // Specify the path to the Python interpreter
     "python.pythonPath": "/usr/local/bin/python3",
+
+    // Exclude specific file patterns from appearing in the file explorer
     "files.exclude": {
-        "**/__pycache__": true,
-        "**/*.pyc": true
+        "**/__pycache__": true, // Exclude the __pycache__ directories
+        "**/*.pyc": true // Exclude Python compiled bytecode files
     }
 }
+
