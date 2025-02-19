@@ -1,5 +1,10 @@
 {
     "recommendations": [
-        "amazonwebservices.amazon-q-vscode"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml"
     ]
 }
