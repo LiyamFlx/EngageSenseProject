@@ -1,6 +1,7 @@
 import unittest
 from src.main import analyze_engagement
 
+
 class TestEngageSense(unittest.TestCase):
 
     def test_analyze_engagement(self):
@@ -50,6 +51,7 @@ class TestEngageSense(unittest.TestCase):
         }
         result = analyze_engagement(input_data)
         self.assertEqual(result, expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
