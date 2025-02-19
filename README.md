@@ -20,6 +20,7 @@ This project uses GitHub Actions for Continuous Integration and Continuous Deplo
 - Perform type checking with static analysis tools like `mypy`
 - Speed up the workflow with caching for dependencies
 - Check for security vulnerabilities in the dependencies using a tool like `safety` or `bandit`
+- Update all submodules after checkout
 
 ## Deployment
 This project uses GitHub Actions for deployment to staging and production environments. The deployment process includes:
